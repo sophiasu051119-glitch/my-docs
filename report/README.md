@@ -102,5 +102,5 @@
 - [x] 首次 Actions 构建和部署成功。
 - [x] 第二次推送自动触发并更新网页。
 - [x] 关键步骤截图、提交链接和运行链接已补齐。
-- [ ] 已在教师仓库提交个人 Issue。
+- [x] 已在教师仓库提交个人 Issue：[02-github-pages suke（#62）](https://github.com/hunnuOpenSourceSoftware2026/assignments/issues/62)。
 
