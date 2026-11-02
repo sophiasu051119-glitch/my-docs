@@ -47,10 +47,10 @@
 
 ### 2.7 第二次推送与自动更新验证
 
-首次部署成功后，我会在首页增加一条容易辨认的自动部署验证文字，再单独提交并推送。此次不手动运行工作流，用来确认 `push` 事件会自动触发第二次构建和部署。
+首次部署成功后，我在首页增加了一段“自动更新验证”文字，再单独提交并推送。此次没有手动运行工作流，Actions 页面显示 `Triggered via push`，说明是 `push` 事件自动触发了第二次构建和部署。网站刷新后也能看到新增段落。
 
-- 对应提交链接：部署后补充
-- 对应 Actions 运行链接：部署后补充
+- 对应提交链接：<https://github.com/sophiasu051119-glitch/my-docs/commit/3e310da610e644a34139f66a2b9bc9bad893d52f>
+- 对应 Actions 运行链接：<https://github.com/sophiasu051119-glitch/my-docs/actions/runs/41417913487>
 
 ![第二次推送触发成功运行](images/07-second-actions.png)
 
@@ -59,6 +59,8 @@
 ## 3. 问题与解决
 
 第一次创建虚拟环境时，Anaconda Python 在 `ensurepip` 阶段报错，生成的 `.venv` 中没有 pip。我先用 `python -m pip --version` 和 `python -m ensurepip --version` 确认系统 Python 3.12 自带的 pip 可以使用，然后通过系统 pip 的 `--target` 参数把依赖安装到 `.venv/Lib/site-packages`。再次执行 `.venv/Scripts/python.exe -m mkdocs build --strict` 后构建成功。
+
+首次推送后，Actions 的 `Configure Pages` 步骤出现 `Get Pages site failed` 和 `Not Found`。我检查日志后发现，当时仓库的 Pages 来源还没有改成 GitHub Actions。进入 `Settings → Pages` 保存正确来源后，我只重跑失败任务，第二次尝试的 `build` 和 `deploy` 都成功。这个现象也说明：源码构建正确并不代表 Pages 已经启用，仓库设置和工作流配置需要同时正确。
 
 完成构建后，我还核对了以下配置：
 
@@ -97,8 +99,8 @@
 - [x] 四页文档均有标题和实际内容。
 - [x] 包含表格、代码示例和页面间链接。
 - [x] 本地使用严格模式构建。
-- [ ] 首次 Actions 构建和部署成功。
-- [ ] 第二次推送自动触发并更新网页。
-- [ ] 关键步骤截图、提交链接和运行链接已补齐。
+- [x] 首次 Actions 构建和部署成功。
+- [x] 第二次推送自动触发并更新网页。
+- [x] 关键步骤截图、提交链接和运行链接已补齐。
 - [ ] 已在教师仓库提交个人 Issue。
 
