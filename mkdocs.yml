@@ -1,0 +1,30 @@
+site_name: 苏可的技术文档
+site_description: 开源软件课程 GitHub Pages 实践记录
+site_url: https://sophiasu051119-glitch.github.io/my-docs/
+repo_url: https://github.com/sophiasu051119-glitch/my-docs
+repo_name: sophiasu051119-glitch/my-docs
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.top
+    - content.code.copy
+  palette:
+    primary: indigo
+    accent: blue
+
+nav:
+  - 首页: index.md
+  - 关于: about.md
+  - 使用指南: guide.md
+  - API 参考: api.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+
